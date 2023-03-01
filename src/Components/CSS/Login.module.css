@@ -1,0 +1,63 @@
+
+
+  .login,
+.image {
+  min-height: 100vh;
+}
+
+.bgimage {
+    background-image: url(https://img.freepik.com/free-vector/health-wellness-vector-background-green-with-women-flexing-illustration_53876-105627.jpg?w=2000);
+    background-size: cover;
+  background-position: center center;
+}
+ 
+  .header{
+ font-weight: 800;
+    color: #1B4332;
+    margin-top: 4%;
+    margin-bottom: 21%;
+
+  }
+  .headerR{
+    font-weight: 800;
+       color: #1B4332;
+       margin-top: 4%;
+       margin-bottom: 5%;
+   
+     }
+
+
+.label{
+font-weight: 700;
+  width: 1;
+  font-size: 18px;
+  width: 100%;
+  justify-content: left;
+  display: flex;
+  color: #2D6A4F;
+  margin-bottom: 8%;
+}
+
+.submit {
+   
+    color: white;
+    background: #40916C;
+    font-size: 23px;
+}
+.logo{
+    margin-right: 37%;
+    margin-left: -15%;
+}
+
+.nav{
+    background-color: #1B4332;
+}
+.li{
+    margin-right: 20%;
+    font-size: 20px;
+    width: 40%;
+    color: #B7E4C7;
+}
+.navItem{
+    color: #B7E4C7;
+}
