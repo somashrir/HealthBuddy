@@ -3,8 +3,7 @@ import styles from "./CSS/NavFooter.module.css";
 import { Link } from "react-router-dom";
 import logo from "../Assets/download.jpeg";
 
- const Navbar = () => {
-
+const LoginNavbar = () => {
   return (
     <>
       <div className={styles.nav}>
@@ -18,28 +17,16 @@ import logo from "../Assets/download.jpeg";
               <label for="nav"></label>
               <ul>
                 <li>
-                  <Link to="/" className={styles.navLink}>
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className={styles.navLink}>
-                    Food
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className={styles.navLink}>
+                  <Link to="" className={styles.navLink}>
                     Blogs
                   </Link>
                 </li>
                 <li>
-                  <Link to="/profile" className={styles.navLink}>
-                    Profile
-                  </Link>
-                </li>
-                <li>
                   <Link to="/Login" className={styles.navLink}>
-                    Logout
+                    Login/
+                  </Link>
+                  <Link to="/Register" className={styles.navLink}>
+                    Register
                   </Link>
                 </li>
               </ul>
@@ -50,4 +37,5 @@ import logo from "../Assets/download.jpeg";
     </>
   );
 };
-export default Navbar;
+
+export default LoginNavbar;

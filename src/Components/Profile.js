@@ -1,4 +1,5 @@
 import React from 'react'
+import Navbar from './Navbar';
 import styles from "../Components/CSS/profile.module.css";
 
 
@@ -8,6 +9,7 @@ import styles from "../Components/CSS/profile.module.css";
 const Profile = () => {
   return (
     <>
+    <Navbar/>
       <div className={styles.background}>
         <div className={`${styles.containerR}`}>
           <h1 className={`${styles.headerR}`}> Fill details</h1>

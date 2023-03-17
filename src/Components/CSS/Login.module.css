@@ -1,63 +1,104 @@
-
-
-  .login,
-.image {
-  min-height: 100vh;
+.container {
+ max-width: 28rem;
+    width: 100%;
+    margin: 3rem auto;
+    padding: 7rem 2.5rem;
+    border: none;
+    outline: none;
+    border-radius: 0.25rem;
+    color: black;
+         background: #ffffff;
+    box-shadow: inset 0 0 3px 1px whitesmoke;
 }
-
-.bgimage {
-    background-image: url(https://img.freepik.com/free-vector/health-wellness-vector-background-green-with-women-flexing-illustration_53876-105627.jpg?w=2000);
-    background-size: cover;
-  background-position: center center;
+.containerR {
+ max-width: 32rem;
+    width: 100%;
+    margin: 0rem auto;
+    padding: 0.2rem 2.5rem;
+    border: none;
+    outline: none;
+    border-radius: 0.25rem;
+     background: #ffffff;
+    box-shadow: inset 0 0 3px 1px whitesmoke;
+    color: black;
 }
+.bg{
  
-  .header{
- font-weight: 800;
-    color: #1B4332;
-    margin-top: 4%;
-    margin-bottom: 21%;
-
-  }
-  .headerR{
+    width: 100%;
+    position: relative;
+    text-align: center;
+    background: linear-gradient(rgba(0,123,255,.05),rgba(0,0,0,.05)),50%/cover no-repeat url(/src/Assets/un.jpg);
+    background-attachment: fixed;
+}
+.header{
+      text-align: center;
+    width: 100%;
+    margin-top: -0.5em;
+    color: #2D6A4F;
     font-weight: 800;
-       color: #1B4332;
-       margin-top: 4%;
-       margin-bottom: 5%;
-   
-     }
+    font-size: 36px;
+}
+.headerR{
+      text-align: center;
+    width: 100%;
+    margin-top: 0.8em;
+    color: #2D6A4F;
+    font-weight: 800;
+    font-size: 40px;
+}
+.inputtext {
+      font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    border: none;
+    width: 105%;
+    padding: 12px;
+    margin-left: -7px;
+    box-shadow: inset 0 0 3px 1px whitesmoke;
+    background: whitesmoke;
 
-
-.label{
-font-weight: 700;
+}
+.label {
+  font-weight: 700;
   width: 1;
-  font-size: 18px;
   width: 100%;
   justify-content: left;
   display: flex;
-  color: #2D6A4F;
-  margin-bottom: 8%;
+  margin-left: -3%;
+  margin-bottom: 5%;
 }
-
-.submit {
-   
-    color: white;
-    background: #40916C;
-    font-size: 23px;
+.link {
+  color: #40916C;
+  margin-left: 2%;
 }
-.logo{
-    margin-right: 37%;
-    margin-left: -15%;
+.already {
+  font-weight: 500;
+  margin-top: 7%;
+  font-weight: 700;
 }
-
-.nav{
-    background-color: #1B4332;
+.inputsubmit {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: inherit;
+  cursor: pointer;
+  min-width: 102%;
+  padding: 0.65rem 1.25rem;
+  border: none;
+  color: white;
+  background: #40916C;
+  margin-top: 17px;
 }
-.li{
-    margin-right: 20%;
-    font-size: 20px;
-    width: 40%;
-    color: #B7E4C7;
-}
-.navItem{
-    color: #B7E4C7;
+.inputcontainer {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: inherit;
+  width: 100%;
+  height: auto;
+  padding: 0.75rem 1.25rem;
+  border: black;
+  outline: none;
+  border-radius: 2rem;
+  color: black;
 }
