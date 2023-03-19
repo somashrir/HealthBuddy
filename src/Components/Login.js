@@ -1,16 +1,32 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import styles from "./CSS/Login.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import LoginNavbar from "./MainNavbar";
-import { Home } from "./Home";
+import Home  from "./Home";
 const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      axios
+        .post('/api/v1/login', { email: email, password: password })
+        .then((response) => {
+          localStorage.setItem('token', response.data.token);
+          navigate('/Home');
+          // redirect to home page or dashboard
+        })
+        .catch((error) => console.log(error));
+    };
   return (
     <>
       <LoginNavbar />
       <div className={`${styles.container} `}>
         <h1 className={`${styles.header}`}> Login</h1>
         <div className="form">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className={styles.inputcontainer}>
               <div className={styles.label}>Email </div>
               <input
@@ -18,6 +34,8 @@ const Login = () => {
                 placeholder="Enter your email"
                 type="email"
                 name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
@@ -29,6 +47,8 @@ const Login = () => {
                 placeholder="Enter your password"
                 type="text"
                 name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
               />
             </div>

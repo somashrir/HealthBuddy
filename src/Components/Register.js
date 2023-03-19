@@ -1,16 +1,34 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import styles from "./CSS/Login.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, redirect, useNavigate } from "react-router-dom";
 import LoginNavbar from "./MainNavbar";
+import Login from './Login';
 
 const Register = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    axios
+      .post('/api/v1/signup', { name: name, email: email, password: password })
+      .then((response) => {
+        localStorage.setItem('token', response.data.token);
+        navigate('/Login');
+        // redirect to home page or dashboard
+      })
+      .catch((error) => console.log(error));
+  };
   return (
     <>
       <LoginNavbar />
       <div className={styles.containerR}>
         <h1 className={styles.headerR}> Register your account</h1>
         <div className="form">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className={styles.inputcontainer}>
               <div className={styles.label}>Name </div>
               <input
@@ -18,6 +36,9 @@ const Register = () => {
                 placeholder="Enter your name"
                 type="text"
                 name="name"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 required
               />
             </div>
@@ -29,6 +50,9 @@ const Register = () => {
                 placeholder="Enter your email"
                 type="email"
                 name="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
@@ -40,6 +64,9 @@ const Register = () => {
                 placeholder="Enter your password"
                 type="text"
                 name="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
               />
             </div>
@@ -60,7 +87,7 @@ const Register = () => {
               value="Sign In"
             />
             <div className={styles.already}>
-              Already registered?{" "}
+              Already registered?{' '}
               <Link to="/login" className={styles.link}>
                 Login
               </Link>
