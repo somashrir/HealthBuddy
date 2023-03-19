@@ -7,6 +7,7 @@ import Profile from './Components/Profile'
 import { Home } from './Components/Home';
 import { HomePage } from './Components/MainHomePage';
 import Footer from './Components/Footer';
+import Calorie from './Components/calorie';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
           <Route path="/Home" element={<Home />} />
+          <Route path="/calories" element={<Calorie />} />
           <Route path="/" element={<HomePage />} />
         </Routes>
         <Footer />

@@ -1,5 +1,4 @@
 import React from "react";
-import image from "../Assets/LandingPage.avif";
 import MainNavbar from './MainNavbar';
 import {Link} from 'react-router-dom'
 import styles from "../Components/CSS/Home.module.css";

@@ -45,6 +45,13 @@
 .Link{
   color:#74C69D
 }
+.link{
+  color:#1B4332
+}
+.link:hover{
+  color:#306a4d;
+  text-decoration: none;
+}
 @media screen and (max-width: 768px) {
   .row {
   display: flex;
