@@ -8,6 +8,7 @@ import { Home } from './Components/Home';
 import { HomePage } from './Components/MainHomePage';
 import Footer from './Components/Footer';
 import Calorie from './Components/calorie';
+import { FoodChart } from './Components/FoodChart';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/calories" element={<Calorie />} />
+          <Route path="/FoodChart" element={<FoodChart />} />
           <Route path="/" element={<HomePage />} />
         </Routes>
         <Footer />

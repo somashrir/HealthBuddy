@@ -1,0 +1,76 @@
+
+.heading{
+    
+        margin-top: 2em;
+    margin-bottom: 2em;
+    font-weight: 700;
+    font-size: 20px;
+    color: #2D6A4F;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    margin-left: 20em;
+}
+.heading2{
+ margin-bottom: 1em;
+    font-weight: 700;
+    font-size: 20px;
+    color: #2D6A4F;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    margin-left: 21em;
+    text-align: center;
+}
+.total{
+    margin-left: 8em;
+}
+.table{
+    margin: auto;
+    
+}
+.delete{
+    background:#9adea4;
+    color: #2D6A4F;
+    border: none;
+    margin: auto;
+    float: right;
+    font-weight: 500;
+}
+.nutrientColumn{
+    background: #2D6A4F;
+    color: #95D5B2;
+    padding: 0.8em;
+    font-weight: 600;
+}
+.date{
+        margin-inline: 0.5em;
+        border: 1px solid #95D5B2;
+        border-radius: 0.2em;
+}
+.rem{
+    margin-left: 9.5em;
+}
+.meal{
+    font-size: 18px;
+    font-weight: 500;
+    color:#2D6A4F;
+}
+.header{
+    font-size: 18px;
+    font-weight: 500;
+    color: #2D6A4F;
+    padding-top: 1.5em;
+}
+.foodItem{
+      
+        font-size: 16px;
+    color: #40916C;
+    font-weight: 500;
+    background: #D8F3DC;
+}
+.addFood{
+    color:#2D6A4F;
+    font-size: 14px;
+    font-weight: 500;
+}
