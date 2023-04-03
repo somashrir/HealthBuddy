@@ -4,11 +4,19 @@ import calorie from '../Assets/calorie.png';
 import Navbar from './Navbar';
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
+import { useLocation, useNavigate } from 'react-router-dom';
+import FoodChart  from './FoodChart';
 
 function Calorie() {
   const [user_id, setUser_id] = useState(null);
   const [query, setQuery] = useState('');
   const [calories, setCalories] = useState([]);
+  const location = useLocation();
+  const { type } = location.state;
+  const {date} = location.state;
+  const navigate = useNavigate();
+
+  
 
   useEffect(() => {
     // Fetch the token from local storage
@@ -32,6 +40,8 @@ function Calorie() {
         {
           query: query,
           user_id: user_id,
+          food_type: type,
+          date:date,
         },
         {
           headers: {
@@ -40,8 +50,10 @@ function Calorie() {
         }
       )
       .then((response) => {
-        console.log(response.data)
+        console.log(response.data);
         setCalories(response.data.foods);
+        navigate('/FoodChart');
+        
       })
       .catch((error) => console.log(error));
   };
@@ -55,7 +67,7 @@ function Calorie() {
 
             <img className={styles.img} src={calorie} />
           </div>
-          <h1>Total Calories= cal </h1>
+          
           <div className={styles.form}>
             <input
               className={styles.input}
@@ -64,8 +76,8 @@ function Calorie() {
               value={query}
               onChange={(event) => setQuery(event.target.value)}
             />
-            <button className={styles.button} onClick={handleClick}>7
-              <span className={styles.search}>Search</span>
+            <button className={styles.button} onClick={handleClick}>
+              <span className={styles.search}>Add Food</span>
             </button>
           </div>
           <div>

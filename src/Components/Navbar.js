@@ -23,7 +23,7 @@ import logo from "../Assets/download.jpeg";
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className={styles.navLink}>
+                  <Link to="/FoodChart" className={styles.navLink}>
                     Food
                   </Link>
                 </li>
