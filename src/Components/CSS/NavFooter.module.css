@@ -15,7 +15,11 @@ ul {
   color: #b7e4c7;
   font-weight: 600;
 }
-
+.navLink :hover{
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
 li {
   list-style: none;
   color: #b7e4c7;
@@ -49,7 +53,7 @@ li {
 nav > ul {
   float: right;
   margin-top: -1.5em;
-  margin-inline: -5em;
+  margin-inline: 0em;
 }
 nav > ul > li {
   text-align: center;

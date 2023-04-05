@@ -9,6 +9,8 @@ import { HomePage } from './Components/MainHomePage';
 import Footer from './Components/Footer';
 import Calorie from './Components/calorie';
 import { FoodChart } from './Components/FoodChart';
+import { Profiledetail } from './Components/Profiledetail';
+import { MedicineTracker } from './Components/MedicineTracker';
 
 
 function App() {
@@ -18,10 +20,13 @@ function App() {
         <Routes>
           <Route path="/Register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/profiledetail" element={<Profiledetail />} />
           <Route path="/login" element={<Login />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/calories" element={<Calorie />} />
           <Route path="/FoodChart" element={<FoodChart />} />
+          <Route path='/Medicine' element={<MedicineTracker/>
+        }/>
           <Route path="/" element={<HomePage />} />
         </Routes>
         <Footer />

@@ -54,7 +54,18 @@ const Profile = () => {
           <div className="form">
             <form onSubmit={handleSubmit}>
               <div className={styles.inputcontainer}>
-                <div className={styles.label}>Age </div>
+                <div className={styles.label}>Gender </div>
+                <select
+                  class={`${styles.dropdown} form-select`}
+                  aria-label="Default select example"
+                >
+                  <option selected>Female</option>
+                  <option value="2">Male</option>
+                  <option value="2">Other</option>
+                </select>
+              </div>
+              <div className={styles.inputcontainer}>
+                <div className={styles.label}>Age</div>
                 <input
                   className={styles.inputtext}
                   placeholder="Enter your age"

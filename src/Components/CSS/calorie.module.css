@@ -1,4 +1,4 @@
-.main {
+.mainCal {
     background-color: #B7E4C7;
     /* min-height: 70vh; */
     height: 100vh;
@@ -13,7 +13,7 @@
     font-size: 130%;
   }
   
-  .container {
+  .containerCal {
     width: 1000px;
     height: auto;
     min-height: 500px;
@@ -27,7 +27,7 @@
     padding: 1rem;
     box-sizing: border-box;
   }
-  .heading {
+  .headingCal {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,7 +39,7 @@
     width: 20vmin;
     background: transparent;
   }
-  .head {
+  .headCal {
     color: #1B4332;
     padding: 0.2rem 1.2rem;
     border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
@@ -47,7 +47,7 @@
     font-size: 1.5rem;
   }
   
-  .input {
+  .inputCal {
     box-sizing: border-box;
     background-color: transparent;
     padding: 0.7rem;
@@ -63,7 +63,7 @@
     margin-right: 10px;
   }
   
-  .button {
+  .buttonCal {
     padding: 0;
     border: none;
     font-family: "Architects Daughter", cursive;
