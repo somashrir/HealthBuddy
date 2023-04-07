@@ -1,0 +1,57 @@
+   .search {
+    width: 42%;
+    border-radius: 2em;
+    padding: 0.3em;
+     background-color: none;
+    background-image: url('/src/Assets/search.png');
+    background-position: right; 
+    background-repeat: no-repeat;
+}
+.medicine{
+    margin-top: 4em;
+    font-size: 17px;
+    color:#1B4332;
+    font-weight: 600;
+}
+.option{
+   
+    color: #1B4332;
+    font-weight: 600;
+}
+.type{
+    margin-top: 2em;
+    font-size: 17px;
+    color:#1B4332;
+    font-weight: 600;
+}
+.button{
+    background: #B7E4C7;
+    border: none;
+    color: #1B4332;
+    font-weight: 600;
+}
+.piechart{
+    width: 32%;
+    margin-top: 5em;
+    margin: auto;
+    padding-top: 5em;
+   
+
+}
+.days{
+    /* background: #9fd9b4; */
+    border: none;
+    font-weight: 600;
+    color: #1B4332;
+    margin-right: 2em;
+}
+.button:hover{
+    background: #40916C;
+    border: none;
+    color: #1B4332;
+    font-weight: 600;
+}
+.file{
+        margin-left: 1em;
+        color: #1B4332;
+}

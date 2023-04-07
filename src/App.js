@@ -11,6 +11,7 @@ import Calorie from './Components/calorie';
 import { FoodChart } from './Components/FoodChart';
 import { Profiledetail } from './Components/Profiledetail';
 import { MedicineTracker } from './Components/MedicineTracker';
+import { FoodSearch } from './Components/FoodSearch';
 
 
 function App() {
@@ -25,8 +26,8 @@ function App() {
           <Route path="/Home" element={<Home />} />
           <Route path="/calories" element={<Calorie />} />
           <Route path="/FoodChart" element={<FoodChart />} />
-          <Route path='/Medicine' element={<MedicineTracker/>
-        }/>
+          <Route path='/Medicine' element={<MedicineTracker/>}/>
+             <Route path='/FoodSearch' element={<FoodSearch/>}/>
           <Route path="/" element={<HomePage />} />
         </Routes>
         <Footer />
