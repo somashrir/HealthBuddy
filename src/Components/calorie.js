@@ -60,12 +60,10 @@ function Calorie() {
   };
 
   return (
-    <>
-      <Navbar />
-      <div className={styles.main}>
-        <div className={styles.container}>
-          <div className={styles.heading}>
-            <h1 className={styles.head}>What did you eat today?</h1>
+    <div className={styles.mainCal}>
+      <div className={styles.containerCal}>
+        <div className={styles.headingCal}>
+          <h1 className={styles.headCal}>What did you eat today?</h1>
 
             <img className={styles.img} src={calorie} />
           </div>
@@ -102,7 +100,7 @@ function Calorie() {
           </div>
         </div>
       </div>
-    </>
+ 
   );
 }
 

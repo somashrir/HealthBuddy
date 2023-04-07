@@ -27,13 +27,24 @@
 }
 .table{
     margin: auto;
-    
+        width: 24%;
+    margin-top: 2em;
+
+
+}
+.dropdown{
+        background:#9adea4;
+    color: #2D6A4F;
+    border: none;
+margin: auto;
+    font-weight: 500;
 }
 .delete{
     background:#9adea4;
     color: #2D6A4F;
     border: none;
     margin: auto;
+    margin-right: 1em;
     float: right;
     font-weight: 500;
 }

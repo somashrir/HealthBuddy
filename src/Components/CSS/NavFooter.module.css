@@ -18,13 +18,11 @@ ul {
   color: #b7e4c7;
   font-weight: 600;
 }
-
-.navLink :hover {
+.navLink :hover{
   color: #fff;
   font-weight: 600;
   text-decoration: none;
 }
-
 li {
   list-style: none;
   color: #b7e4c7;
@@ -202,7 +200,7 @@ footer {
   width: -webkit-fill-available;
   padding-top: 5em;
   padding-left: 2em;
-  margin-top: 7em;
+  margin-top: 5em;
 }
 
 .FooterLink {
