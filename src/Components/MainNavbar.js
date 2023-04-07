@@ -16,11 +16,11 @@ const LoginNavbar = () => {
               <input type="checkbox" id="nav" />
               <label for="nav"></label>
               <ul>
-                <li>
+                {/* <li>
                   <Link to="" className={styles.navLink}>
                     Blogs
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link to="/Login" className={styles.navLink}>
                     Login/

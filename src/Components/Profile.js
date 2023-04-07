@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import axios from 'axios';
 import styles from '../Components/CSS/profile.module.css';
 import jwt_decode from 'jwt-decode';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Profile = () => {
   const [age, setAge] = useState(0);
@@ -12,6 +13,7 @@ const Profile = () => {
   const [weight, setWeight] = useState(0.0)
   const [activity_level, setActivityLevel] = useState('')
   const [goal_weight, setGoalWeight] = useState(0.0)
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch the token from local storage
@@ -41,6 +43,7 @@ const Profile = () => {
         })
         .then((response) => {
           // redirect to home page or dashboard
+          navigate('/Home')
         })
         .catch((error) => console.log(error));
     };  

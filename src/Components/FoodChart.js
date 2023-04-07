@@ -90,7 +90,7 @@ export const FoodChart = () => {
         />
         <span className={styles.total}>Remaining calories: </span>
         <span className={styles.remCal}>
-          {req_intake-total_intake}/{req_intake}
+          {(req_intake - total_intake).toFixed(2)}/{req_intake}
         </span>
       </div>
       <div className={styles.heading2}>
@@ -107,11 +107,16 @@ export const FoodChart = () => {
           <col class="col-1" />
           <col class="col-1" />
           <col class="col-1" />
+          <col class="col-1" />
         </colgroup>
 
         <tbody>
           <tr class="meal_header">
             <td class="alt nutrient-column">
+              <div class="subtitle"></div>
+            </td>
+            <td className={styles.nutrientColumn}>
+              Quantity
               <div class="subtitle"></div>
             </td>
             <td className={styles.nutrientColumn}>
@@ -175,6 +180,10 @@ export const FoodChart = () => {
               return (
                 <tr className={styles.foodItem}>
                   <td>{food.name}</td>
+                  <td>
+                    {food.quantity}
+                    {food.quantity_type}
+                  </td>
                   <td>{food.calorie}</td>
                   <td>{food.carb}</td>
                   <td>{food.fat}</td>
@@ -199,7 +208,7 @@ export const FoodChart = () => {
               <div className={styles.c}>
                 <Link
                   to={'/calories'}
-                  state={{ type: 'lunch' }}
+                  state={{ type: 'lunch', date: selectedDate }}
                   className={styles.addFood}
                 >
                   Add Food
@@ -229,6 +238,10 @@ export const FoodChart = () => {
               return (
                 <tr className={styles.foodItem}>
                   <td>{food.name}</td>
+                  <td>
+                    {food.quantity}
+                    {food.quantity_type}
+                  </td>
                   <td>{food.calorie}</td>
                   <td>{food.carb}</td>
                   <td>{food.fat}</td>
@@ -253,7 +266,7 @@ export const FoodChart = () => {
               <div className={styles.c}>
                 <Link
                   to={'/calories'}
-                  state={{ type: 'dinner' }}
+                  state={{ type: 'dinner', date: selectedDate}}
                   className={styles.addFood}
                 >
                   Add Food
@@ -283,6 +296,10 @@ export const FoodChart = () => {
               return (
                 <tr className={styles.foodItem}>
                   <td>{food.name}</td>
+                  <td>
+                    {food.quantity}
+                    {food.quantity_type}
+                  </td>
                   <td>{food.calorie}</td>
                   <td>{food.carb}</td>
                   <td>{food.fat}</td>

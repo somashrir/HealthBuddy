@@ -11,32 +11,32 @@ import logo from "../Assets/download.jpeg";
         <header>
           <div className={styles.inner}>
             <nav>
-              <Link to="/" className={styles.logo}>
+              <Link to="/Home" className={styles.logo}>
                 <img src={logo} className={styles.cart}></img>
               </Link>
               <input type="checkbox" id="nav" />
               <label for="nav"></label>
               <ul>
-                <li>
-                  <Link to="/" className={styles.navLink}>
+                {/* <li>
+                  <Link to="/Home" className={styles.navLink}>
                     Home
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link to="/FoodChart" className={styles.navLink}>
                     Food
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="/" className={styles.navLink}>
                     Blogs
                   </Link>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <Link to="/profile" className={styles.navLink}>
                     Profile
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link to="/Login" className={styles.navLink}>
                     Logout

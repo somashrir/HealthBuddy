@@ -19,7 +19,14 @@ const Login = () => {
           localStorage.setItem('email', response.data.email);
           localStorage.setItem('calorie_intake', response.data.calorie_intake);
 
-          navigate('/Home');
+          if (response.data.calorie_intake==null)
+          {
+            navigate('/profile')
+          }
+          else 
+          {
+            navigate('/Home');
+          }
           // redirect to home page or dashboard
         })
         .catch((error) => console.log(error));
