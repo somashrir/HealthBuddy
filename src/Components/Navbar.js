@@ -17,21 +17,21 @@ import logo from "../Assets/download.jpeg";
               <input type="checkbox" id="nav" />
               <label for="nav"></label>
               <ul>
-                {/* <li>
-                  <Link to="/Home" className={styles.navLink}>
-                    Home
+                <li>
+                  <Link to="/FoodSearch" className={styles.navLink}>
+                    FoodSearch
                   </Link>
-                </li> */}
+                </li>
                 <li>
                   <Link to="/FoodChart" className={styles.navLink}>
                     Food
                   </Link>
                 </li>
-                {/* <li>
-                  <Link to="/" className={styles.navLink}>
-                    Blogs
+                <li>
+                  <Link to="/Medicine" className={styles.navLink}>
+                    MedicineTracker
                   </Link>
-                </li> */}
+                </li>
                 {/* <li>
                   <Link to="/profile" className={styles.navLink}>
                     Profile
