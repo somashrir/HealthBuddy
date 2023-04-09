@@ -18,8 +18,8 @@ ul {
   color: #b7e4c7;
   font-weight: 600;
 }
-.navLink :hover{
-  color: #fff;
+.navLink:hover{
+  color: white;
   font-weight: 600;
   text-decoration: none;
 }
@@ -64,7 +64,7 @@ nav>ul {
 nav>ul>li {
   text-align: center;
   line-height: 40px;
-  margin-left: 70px;
+  margin-left: 5px;
   margin-right: 5em;
 }
 
@@ -205,6 +205,18 @@ footer {
 
 .FooterLink {
   color: #b7e4c7;
+  margin-bottom: 20px;
+  font-size: 18px;
+  text-decoration: none;
+}
+.FooterLinkEmail {
+  color: #b7e4c7;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-decoration: none;
+}
+.FooterLink:hover {
+  color: #fff;
   margin-bottom: 20px;
   font-size: 18px;
   text-decoration: none;

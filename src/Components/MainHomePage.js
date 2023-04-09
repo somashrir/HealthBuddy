@@ -14,35 +14,26 @@ export const HomePage = () => {
       <div className={`${styles.bgimage}`}>
         <div className={styles.welcome}>Welcome to HealthBuddy</div>
       </div>
-      {/* <div className={styles.secondDiv}>
-        Count Calories: Fast and Easy Food Tracking
-        <div className={styles.button}>
-          <button className={styles.btn}>Count the calories</button>
+      <div className="images">
+        <div className="row">
+          <div className="column">
+            <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80" />
+            <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" />
+          </div>
+          <div className="column">
+            <img src="https://images.unsplash.com/photo-1535914254981-b5012eebbd15?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" />
+            <img src="https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80" />
+
+            {/* <img src="https://images.unsplash.com/photo-1535914254981-b5012eebbd15?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" /> */}
+          </div>
         </div>
-      </div> */}
-      <div className={styles.secondDiv}>
-        Must-Know Fitness Facts: For A Fitter (And Healthier) You
-      </div>
-      <div class={styles.row}>
-        <div class={styles.column}>
-          <img src={fact1} width="200" className={styles.image} />
+        <div className="text">
+          <p className="heading">Diet Flexibility and Fitness Freedom</p>
+          <p className="para">
+            With the right data, work with greater efficiency and,reach your
+            fitness goals faster.
+          </p>
         </div>
-        <div class={styles.column}>
-          <img src={fact2} width="200" className={styles.image} />
-        </div>
-        <div class={styles.column}>
-          <img src={fact3} width="200" className={styles.image} />
-        </div>
-        <div class={styles.column}>
-          <img src={fact4} width="200" className={styles.image} />
-        </div>
-      </div>
-      <div className={styles.secondDiv}>
-        <Link to="/Login" className={styles.Link}>
-          {" "}
-          Login{" "}
-        </Link>{" "}
-        for more!!
       </div>
     </>
   );

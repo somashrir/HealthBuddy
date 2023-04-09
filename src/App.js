@@ -27,7 +27,7 @@ function App() {
           <Route path="/calories" element={<Calorie />} />
           <Route path="/FoodChart" element={<FoodChart />} />
           <Route path='/Medicine' element={<MedicineTracker/>}/>
-             <Route path='/FoodSearch' element={<FoodSearch/>}/>
+          <Route path='/FoodSearch' element={<FoodSearch/>}/>
           <Route path="/" element={<HomePage />} />
         </Routes>
         <Footer />

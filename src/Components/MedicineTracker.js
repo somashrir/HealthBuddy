@@ -1,103 +1,4 @@
-// import React from 'react'
-//     import { Link } from "react-router-dom";
-//     import styles1 from "./CSS/medicine.module.css";
-//     import styles from "./CSS/Chart.module.css";
-//     import Navbar from "./Navbar";
-//     import {search} from '../Assets/search.png';
-// export const MedicineTracker = () => {
-//   return (
-//     <>
-//       <Navbar />
-//       <div className={styles1.medicine}>
-//         Add Medicine:{" "}
-//         <input
-//           type="text"
-//           className={styles1.search}
-//           placeholder="Search here"
-//         />
-//       </div>
-//       <div className={styles1.type}>
-//         Type:{" "}{" "}
-//         <select className={styles1.option}>
-//           <option>Tablet</option>
-//           <option>Syrup</option>
-//           <option>Ointment</option>
-//         </select>
-//       </div>
-//       <table className={styles.table}>
-//         <tbody>
-//           <tr class="meal_header">
-//             <td class="alt nutrient-column">
-//               <div class="subtitle"></div>
-//             </td>
-//           </tr>
 
-//           <tr className={styles.foodItem}>
-//             <td className={styles1.days}>Days </td>
-//             <td>
-//               <button className={styles1.button}>Mon</button>
-//             </td>
-//             <td>
-//               <button className={styles1.button}>Tues</button>
-//             </td>
-//             <td>
-//               <button className={styles1.button}>Wed</button>
-//             </td>
-//             <td>
-//               <button className={styles1.button}>Thurs</button>
-//             </td>
-//             <td>
-//               <button className={styles1.button}>Fri</button>
-//             </td>
-//             <td>
-//               {" "}
-//               <button className={styles1.button}>Sat</button>
-//             </td>
-//             <td>
-//               {" "}
-//               <button className={styles1.button}>Sun</button>
-//             </td>
-//           </tr>
-//         </tbody>
-//       </table>
-//       <table className={styles.table}>
-//         <tbody>
-//           <tr class="meal_header">
-//             <td class="alt nutrient-column">
-//               <div class="subtitle"></div>
-//             </td>
-//           </tr>
-//           <tr className={styles.foodItem}>
-//             <td className={styles1.days}>Timings </td>
-//             <td>
-//               <button className={styles1.button}>Morning</button>
-//             </td>
-//             <td>
-//               <button className={styles1.button}>Afternoon</button>
-//             </td>
-//             <td>
-//               <button className={styles1.button}>Evening</button>
-//             </td>
-//             <td>
-//               <button className={styles1.button}>Night</button>
-//             </td>
-//           </tr>
-//         </tbody>
-//       </table>
-
-//         {/* <table className={styles.table}>
-//         <tbody>
-//           <tr class="meal_header">
-//             <td class="alt nutrient-column">
-//               <div class="subtitle"></div>
-//             </td>
-
-//             ////How to show data of medicine
-
-//           </tr></tbody></table> */}
-//     </>
-//   );
-// }
 
 import React, { useState,useEffect } from 'react'
 import { Link } from "react-router-dom";
@@ -204,7 +105,7 @@ export const MedicineTracker = () => {
       <Navbar />
       <form onSubmit={handleSubmit}>
         <div className={styles1.medicine}>
-          Add Medicine:{' '}
+          Add Medicine:{" "}
           <input
             type="text"
             className={styles1.search}
@@ -214,7 +115,7 @@ export const MedicineTracker = () => {
           />
         </div>
         <div className={styles1.type}>
-          Type:{' '}
+          Type:{" "}
           <select
             className={styles1.option}
             value={medicineType}
@@ -239,7 +140,7 @@ export const MedicineTracker = () => {
                 <button
                   type="button"
                   className={styles1.button}
-                  onClick={() => handleDayClick('mon')}
+                  onClick={() => handleDayClick("mon")}
                 >
                   Mon
                 </button>
@@ -248,7 +149,7 @@ export const MedicineTracker = () => {
                 <button
                   type="button"
                   className={styles1.button}
-                  onClick={() => handleDayClick('tues')}
+                  onClick={() => handleDayClick("tues")}
                 >
                   Tues
                 </button>
@@ -257,7 +158,7 @@ export const MedicineTracker = () => {
                 <button
                   type="button"
                   className={styles1.button}
-                  onClick={() => handleDayClick('wed')}
+                  onClick={() => handleDayClick("wed")}
                 >
                   Wed
                 </button>
@@ -266,7 +167,7 @@ export const MedicineTracker = () => {
                 <button
                   type="button"
                   className={styles1.button}
-                  onClick={() => handleDayClick('thurs')}
+                  onClick={() => handleDayClick("thurs")}
                 >
                   Thurs
                 </button>
@@ -275,27 +176,27 @@ export const MedicineTracker = () => {
                 <button
                   type="button"
                   className={styles1.button}
-                  onClick={() => handleDayClick('fri')}
+                  onClick={() => handleDayClick("fri")}
                 >
                   Fri
                 </button>
               </td>
               <td>
-                {' '}
+                {" "}
                 <button
                   type="button"
                   className={styles1.button}
-                  onClick={() => handleDayClick('sat')}
+                  onClick={() => handleDayClick("sat")}
                 >
                   Sat
                 </button>
               </td>
               <td>
-                {' '}
+                {" "}
                 <button
                   type="button"
                   className={styles1.button}
-                  onClick={() => handleDayClick('sun')}
+                  onClick={() => handleDayClick("sun")}
                 >
                   Sun
                 </button>
@@ -316,7 +217,7 @@ export const MedicineTracker = () => {
                 <button
                   type="button"
                   className={styles1.button}
-                  onClick={() => handleTimingClick('morning')}
+                  onClick={() => handleTimingClick("morning")}
                 >
                   Morning
                 </button>
@@ -325,7 +226,7 @@ export const MedicineTracker = () => {
                 <button
                   type="button"
                   className={styles1.button}
-                  onClick={() => handleTimingClick('afternoon')}
+                  onClick={() => handleTimingClick("afternoon")}
                 >
                   Afternoon
                 </button>
@@ -334,7 +235,7 @@ export const MedicineTracker = () => {
                 <button
                   type="button"
                   className={styles1.button}
-                  onClick={() => handleTimingClick('evening')}
+                  onClick={() => handleTimingClick("evening")}
                 >
                   Evening
                 </button>
@@ -343,7 +244,7 @@ export const MedicineTracker = () => {
                 <button
                   type="button"
                   className={styles1.button}
-                  onClick={() => handleTimingClick('night')}
+                  onClick={() => handleTimingClick("night")}
                 >
                   Night
                 </button>
@@ -351,8 +252,68 @@ export const MedicineTracker = () => {
             </tr>
           </tbody>
         </table>
-        <input type="submit" name="submit" value="Add" />
+        <input
+          type="submit"
+          name="submit"
+          value="Add"
+          className={styles1.add}
+        />
       </form>
+      <table className={styles.table} id="diary-table">
+        <colgroup>
+        
+          <col class="col-2" />
+          <col class="col-2" />
+          <col class="col-1" />
+        </colgroup>
+
+        <tbody>
+          <tr class="meal_header">
+            <td className={styles.header}>Morning</td>
+          </tr>
+          <tr className={styles.foodItem}>
+            <td></td>
+            <td>MedName</td>
+
+            <td>
+              <button className={styles.delete}>Delete</button>
+            </td>
+          </tr>
+
+          <tr class="meal_header">
+            <td className={styles.header}>Afternoon</td>
+          </tr>
+          <tr className={styles.foodItem}>
+            <td></td>
+            <td>MedName</td>
+
+            <td>
+              <button className={styles.delete}>Delete</button>
+            </td>
+          </tr>
+
+          <tr class="meal_header">
+            <td className={styles.header}>Evening</td>
+          </tr>
+          <tr className={styles.foodItem}>
+            <td></td>
+            <td>MedName</td>
+            <td>
+              <button className={styles.delete}>Delete</button>
+            </td>
+          </tr>
+          <tr class="meal_header">
+            <td className={styles.header}>Night</td>
+          </tr>
+          <tr className={styles.foodItem}>
+            <td></td>
+            <td>MedName</td>
+            <td>
+              <button className={styles.delete}>Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </>
   );
             }
