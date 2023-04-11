@@ -1,71 +1,66 @@
-
-
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles1 from "./CSS/medicine.module.css";
 import styles from "./CSS/Chart.module.css";
 import Navbar from "./Navbar";
-import search from '../Assets/search.png';
-import axios from 'axios';
+import search from "../Assets/search.png";
+import axios from "axios";
 
 export const MedicineTracker = () => {
-
-  const [medicineName, setMedicineName] = useState('');
-  const [medicineType, setMedicineType] = useState('Tablet');
+  const [medicineName, setMedicineName] = useState("");
+  const [medicineType, setMedicineType] = useState("Tablet");
   const [selectedDays, setSelectedDays] = useState([]);
   const [selectedTimings, setSelectedTimings] = useState([]);
   const [morningMed, setMorningMed] = useState([]);
   const [afternoonMed, setAfternoonMed] = useState([]);
   const [eveningMed, setEveningMed] = useState([]);
   const [nightMed, setNightMed] = useState([]);
+  const [Active, setActive] = useState(false);
 
-  
-      useEffect(() => {
-        axios
-          .post(
-            'api/v1/medShow',
-            {
-              token: localStorage.getItem('token'),
-              
-            },
-            {
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}`,
-              },
-            }
-          )
-          .then((response) => {
-            console.log(response.data.morning_med);
-            setMorningMed(response.data.morning_med);
-            setAfternoonMed(response.data.afternoon_med);
-            setEveningMed(response.data.evening_med);
-            setNightMed(response.data.night_med);
-            // setRemainingIntake(response.data.remaining_intake);
-          })
-          .catch((error) => {
-            console.log(error);
-          })
-        },[]);
+  useEffect(() => {
+    axios
+      .post(
+        "api/v1/medShow",
+        {
+          token: localStorage.getItem("token"),
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      )
+      .then((response) => {
+        console.log(response.data.morning_med);
+        setMorningMed(response.data.morning_med);
+        setAfternoonMed(response.data.afternoon_med);
+        setEveningMed(response.data.evening_med);
+        setNightMed(response.data.night_med);
+        // setRemainingIntake(response.data.remaining_intake);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   const handleDayClick = (day) => {
-   
     if (!selectedDays.includes(day)) {
       // setSelectedDays(selectedDays.filter((d) => d !== day));
       setSelectedDays([...selectedDays, day]);
+      setActive(true);
       console.log(selectedDays);
     }
     // } else {
   };
 
   const handleTimingClick = (timing) => {
-    
     if (!selectedTimings.includes(timing)) {
       // setSelectedTimings(selectedTimings.filter((t) => t !== timing));
       setSelectedTimings([...selectedTimings, timing]);
-      console.log(selectedTimings)
-    } 
+      console.log(selectedTimings);
+    }
     // else {
-      
+
     // }
   };
 
@@ -76,18 +71,18 @@ export const MedicineTracker = () => {
     // console.log(medicineName)
     axios
       .post(
-        '/api/v1/createMed',
+        "/api/v1/createMed",
         {
           medicineName: medicineName,
           medicineType: medicineType,
           selectedDays: selectedDays,
           selectedTimings: selectedTimings,
-          token: localStorage.getItem('token'),
+          token: localStorage.getItem("token"),
         },
 
         {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem('token')}`,
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         }
       )
@@ -95,10 +90,10 @@ export const MedicineTracker = () => {
         window.location.reload(true);
       })
       .catch((error) => console.log(error));
-      setSelectedDays([])
-      setSelectedTimings([])
+    setSelectedDays([]);
+    setSelectedTimings([]);
     // Submit selectedDays and selectedTimings to your backend
-  }
+  };
 
   return (
     <>
@@ -126,7 +121,7 @@ export const MedicineTracker = () => {
             <option>Ointment</option>
           </select>
         </div>
-        <table className={styles.table}>
+        <table className={styles.tableDays}>
           <tbody>
             <tr class="meal_header">
               <td class="alt nutrient-column">
@@ -204,7 +199,7 @@ export const MedicineTracker = () => {
             </tr>
           </tbody>
         </table>
-        <table className={styles.table}>
+        <table className={styles.tableTimings}>
           <tbody>
             <tr class="meal_header">
               <td class="alt nutrient-column">
@@ -261,7 +256,6 @@ export const MedicineTracker = () => {
       </form>
       <table className={styles.table} id="diary-table">
         <colgroup>
-        
           <col class="col-2" />
           <col class="col-2" />
           <col class="col-1" />
@@ -279,7 +273,22 @@ export const MedicineTracker = () => {
               <button className={styles.delete}>Delete</button>
             </td>
           </tr>
+          <tr className={styles.foodItem}>
+            <td></td>
+            <td>MedName</td>
 
+            <td>
+              <button className={styles.delete}>Delete</button>
+            </td>
+          </tr>{" "}
+          <tr className={styles.foodItem}>
+            <td></td>
+            <td>MedName</td>
+
+            <td>
+              <button className={styles.delete}>Delete</button>
+            </td>
+          </tr>
           <tr class="meal_header">
             <td className={styles.header}>Afternoon</td>
           </tr>
@@ -291,7 +300,6 @@ export const MedicineTracker = () => {
               <button className={styles.delete}>Delete</button>
             </td>
           </tr>
-
           <tr class="meal_header">
             <td className={styles.header}>Evening</td>
           </tr>
@@ -316,4 +324,4 @@ export const MedicineTracker = () => {
       </table>
     </>
   );
-            }
+};

@@ -82,7 +82,7 @@ export const FoodChart = () => {
     <>
       <Navbar />
       <div className={styles.heading}>
-        Your Food diary is{'    '}
+        Your Food diary is{"    "}
         <input
           type="date"
           className={styles.date}
@@ -90,12 +90,13 @@ export const FoodChart = () => {
         />
         <span className={styles.total}>Remaining calories: </span>
         <span className={styles.remCal}>
-          {(req_intake - total_intake).toFixed(2)}/{req_intake}
+          {(req_intake - total_intake).toFixed(2)}/
+          <span className={styles.totalCal}>123</span>
         </span>
       </div>
       <div className={styles.heading2}>
         <span className={styles.rem}>Total calories consumed: </span>
-        <span className={styles.remCal}>{total_intake}</span>
+        <span className={styles.totalIntake}>{total_intake}</span>
       </div>
       <table className={styles.table} id="diary-table">
         <colgroup>
@@ -149,8 +150,8 @@ export const FoodChart = () => {
               Breakfast
               <div className={styles.c}>
                 <Link
-                  to={'/calories'}
-                  state={{ type: 'breakfast', date: selectedDate }}
+                  to={"/calories"}
+                  state={{ type: "breakfast", date: selectedDate }}
                   className={styles.addFood}
                 >
                   Add Food
@@ -207,8 +208,8 @@ export const FoodChart = () => {
               Lunch
               <div className={styles.c}>
                 <Link
-                  to={'/calories'}
-                  state={{ type: 'lunch', date: selectedDate }}
+                  to={"/calories"}
+                  state={{ type: "lunch", date: selectedDate }}
                   className={styles.addFood}
                 >
                   Add Food
@@ -265,8 +266,8 @@ export const FoodChart = () => {
               Dinner
               <div className={styles.c}>
                 <Link
-                  to={'/calories'}
-                  state={{ type: 'dinner', date: selectedDate}}
+                  to={"/calories"}
+                  state={{ type: "dinner", date: selectedDate }}
                   className={styles.addFood}
                 >
                   Add Food

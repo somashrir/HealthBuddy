@@ -26,11 +26,32 @@
     margin-left: 8em;
 }
 .table{
+       margin: auto;
+    width: 50%;
+    margin-top: 1em;
+    border-collapse: separate;
+    border-spacing: 0 2px;
+}
+.tableDays{
     margin: auto;
-        width: 24%;
-    margin-top: 2em;
-
-
+width:22%;
+margin-top:2em
+}
+.tableTimings{
+margin: auto;
+width:22%;
+margin-top:2em
+}
+.totalCal{
+    color:#40916C
+}
+.remCal{
+    margin-left: 0.5em;
+    color: rgb(191, 41, 41)
+}
+.totalIntake{
+     margin-left: 0.5em; 
+     color:#40916C
 }
 .dropdown{
         background:#9adea4;

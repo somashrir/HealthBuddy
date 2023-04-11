@@ -28,7 +28,7 @@ const Footer = () => {
               <i class="fa fa-envelope"></i> someshwar@gmail.com
             </Link>
             <Link to="#" className={styles.FooterLink}>
-              <i class="fa fa-phone"></i> 94539161929
+              <i class="fa fa-phone"></i> 9453916192
             </Link>
             <Link to="https://www.linkedin.com/" className={styles.FooterLink}>
               <img src={icon} /> LinkedIn

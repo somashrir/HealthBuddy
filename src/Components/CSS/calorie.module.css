@@ -11,6 +11,7 @@
     /* font-family: "Architects Daughter", cursive; */
     text-align: center;
     font-size: 130%;
+    padding-top:12em ;
   }
   
   .containerCal {
@@ -62,7 +63,9 @@
     margin-bottom: 20px;
     margin-right: 10px;
   }
-  
+  .input{
+    margin-bottom: 1em;
+  }
   .buttonCal {
     padding: 0;
     border: none;
@@ -73,13 +76,14 @@
     
   }
   .search {
+      margin-top: 2em;
+    width: 10em;
+    font-size: 17px;
+    font-weight: 700;
     background: #B7E4C7;
-    display: block;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    border: 2px solid;
-    height: 45px;
-    width: 300px;
+    color: #1B4332;
+    border: none;
+    padding: 0.5em;
   }
   
   .listitem {
@@ -89,3 +93,6 @@
     justify-content: space-between;
     
   }
+.select{
+  margin-left: 1em;
+}

@@ -62,12 +62,12 @@ export function FoodSearch({
           color3 || "#ff006e",
           color4 || "#3a86ff",
           color5 || "#8338ec",
+          color6 || "#3a0ca3",
         ],
-
-        borderWidth: 1,
+    borderWidth: 1,
       },
-    ],
-  };
+     ],
+    };
 
   return (
     <>
@@ -84,10 +84,45 @@ export function FoodSearch({
       <div className={styles1.chart}>
         <div className={styles1.details}>
           <div className={styles1.FoodName}>Your food details for FoodName</div>
-          <div className={styles1.data}>calories: 192 </div>
-          <div className={styles1.data}>calories: 192 </div>
-          <div className={styles1.data}>calories: 192 </div>
-          <div className={styles1.data}>calories: 192 </div>
+          <table className={styles1.table}>
+            <tbody>
+              <tr>
+                <td>calories</td>
+                <td>:</td>
+                <td>112</td>
+              </tr>
+              <tr>
+                <td>calories</td>
+                <td>:</td>
+                <td>112</td>
+              </tr>
+              <tr>
+                <td>calories</td>
+                <td>:</td>
+                <td>112</td>
+              </tr>
+              <tr>
+                <td>calories</td>
+                <td>:</td>
+                <td>112</td>
+              </tr>
+              <tr>
+                <td>calories</td>
+                <td>:</td>
+                <td>112</td>
+              </tr>
+              <tr>
+                <td>calories</td>
+                <td>:</td>
+                <td>112</td>
+              </tr>
+              <tr>
+                <td>calories</td>
+                <td>:</td>
+                <td>112</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
