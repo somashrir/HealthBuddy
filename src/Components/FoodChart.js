@@ -91,7 +91,7 @@ export const FoodChart = () => {
         <span className={styles.total}>Remaining calories: </span>
         <span className={styles.remCal}>
           {(req_intake - total_intake).toFixed(2)}/
-          <span className={styles.totalCal}>123</span>
+          <span className={styles.totalCal}>{total_intake}</span>
         </span>
       </div>
       <div className={styles.heading2}>
