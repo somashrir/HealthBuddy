@@ -113,6 +113,7 @@ export const MedicineTracker = () => {
                })
                .catch((error) => console.log(error));
            };
+          
 
   return (
     <>
@@ -181,7 +182,6 @@ export const MedicineTracker = () => {
                 <button
                   type="button"
                   className={styles1.button}
-                 
                   onClick={() => handleDayClick('thurs')}
                 >
                   Thurs
@@ -294,43 +294,87 @@ export const MedicineTracker = () => {
               <tr className={styles.foodItem}>
                 <td>{med.name}</td>
 
-            <td>
-              <button className={styles.delete}>Delete</button>
-            </td>
-          </tr>
+                <td>
+                  <button
+                    className={styles.delete}
+                    onClick={handleDelete(med.id,"morning")}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            );
+          })}
+          {afternoonMed.length != 0 ? (
+            <tr class="meal_header">
+              <td className={styles.header}>Afternoon</td>
+            </tr>
+          ) : (
+            <div></div>
+          )}
+          {afternoonMed.map((med) => {
+            return (
+              <tr className={styles.foodItem}>
+                <td>{med.name}</td>
 
-          <tr class="meal_header">
-            <td className={styles.header}>Afternoon</td>
-          </tr>
-          <tr className={styles.foodItem}>
-            <td></td>
-            <td>MedName</td>
+                <td>
+                  <button
+                    className={styles.delete}
+                    onClick={handleDelete(med.id,"afternoon")}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            );
+          })}
 
-            <td>
-              <button className={styles.delete}>Delete</button>
-            </td>
-          </tr>
+          {eveningMed.length != 0 ? (
+            <tr class="meal_header">
+              <td className={styles.header}>Evening</td>
+            </tr>
+          ) : (
+            <div></div>
+          )}
+          {eveningMed.map((med) => {
+            return (
+              <tr className={styles.foodItem}>
+                <td>{med.name}</td>
 
-          <tr class="meal_header">
-            <td className={styles.header}>Evening</td>
-          </tr>
-          <tr className={styles.foodItem}>
-            <td></td>
-            <td>MedName</td>
-            <td>
-              <button className={styles.delete}>Delete</button>
-            </td>
-          </tr>
-          <tr class="meal_header">
-            <td className={styles.header}>Night</td>
-          </tr>
-          <tr className={styles.foodItem}>
-            <td></td>
-            <td>MedName</td>
-            <td>
-              <button className={styles.delete}>Delete</button>
-            </td>
-          </tr>
+                <td>
+                  <button
+                    className={styles.delete}
+                    onClick={handleDelete(med.id,"evening")}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            );
+          })}
+          {nightMed.length != 0 ? (
+            <tr class="meal_header">
+              <td className={styles.header}>Night</td>
+            </tr>
+          ) : (
+            <div></div>
+          )}
+          {nightMed.map((med) => {
+            return (
+              <tr className={styles.foodItem}>
+                <td>{med.name}</td>
+
+                <td>
+                  <button
+                    className={styles.delete}
+                    onClick={handleDelete(med.id,"night")}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </>

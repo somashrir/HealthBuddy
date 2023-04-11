@@ -13,10 +13,12 @@ function Calorie() {
   const [quantity, setQuantity] = useState('');
   const [quantityType, setQuantityType] = useState('unit');
   const [calories, setCalories] = useState([]);
-  // const location = useLocation();
-  // const { type } = location.state;
-  // const { date } = location.state;
+  const location = useLocation();
+  const { type } = location.state;
+  const { date } = location.state;
   const navigate = useNavigate();
+  console.log('calorie-------------')
+  console.log(date)
 
   useEffect(() => {
     // Fetch the token from local storage
@@ -40,10 +42,10 @@ function Calorie() {
         {
           query: query,
           user_id: user_id,
-          // food_type: type,
-          // date: date,
-          // quantity: quantity,
-          // quantityType: quantityType,
+          food_type: type,
+          date: date,
+          quantity: quantity,
+          quantityType: quantityType,
         },
         {
           headers: {

@@ -89,51 +89,52 @@ export function FoodSearch({
         </div>
       </form>
       {console.log(calorie)}
-    {calorie!=0?
-      (<div className={styles1.chart}>
-        <div className={styles1.details}>
-          <div className={styles1.FoodName}>Your food details for FoodName</div>
-          <table className={styles1.table}>
-            <tbody>
-              <tr>
-                <td>calories</td>
-                <td>:</td>
-                <td>112</td>
-              </tr>
-              <tr>
-                <td>calories</td>
-                <td>:</td>
-                <td>112</td>
-              </tr>
-              <tr>
-                <td>calories</td>
-                <td>:</td>
-                <td>112</td>
-              </tr>
-              <tr>
-                <td>calories</td>
-                <td>:</td>
-                <td>112</td>
-              </tr>
-              <tr>
-                <td>calories</td>
-                <td>:</td>
-                <td>112</td>
-              </tr>
-              <tr>
-                <td>calories</td>
-                <td>:</td>
-                <td>112</td>
-              </tr>
-              <tr>
-                <td>calories</td>
-                <td>:</td>
-                <td>112</td>
-              </tr>
-            </tbody>
-          </table>
+      {calorie != 0 ? (
+        <div className={styles1.chart}>
+          <div className={styles1.details}>
+            <div className={styles1.FoodName}>
+              Your food details for {foodName}
+            </div>
+            <table className={styles1.table}>
+              <tbody>
+                <tr>
+                  <td>calories</td>
+                  <td>:</td>
+                  <td>{calorie}</td>
+                </tr>
+                <tr>
+                  <td>Fat</td>
+                  <td>:</td>
+                  <td>{fat}</td>
+                </tr>
+                <tr>
+                  <td>Sugar</td>
+                  <td>:</td>
+                  <td>{sugar}</td>
+                </tr>
+                <tr>
+                  <td>Carbs</td>
+                  <td>:</td>
+                  <td>{carbs}</td>
+                </tr>
+                <tr>
+                  <td>Protein</td>
+                  <td>:</td>
+                  <td>{protein}</td>
+                </tr>
+                <tr>
+                  <td>Sodium</td>
+                  <td>:</td>
+                  <td>{sodium}</td>
+                </tr>
+               
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>):(<div></div>)}
+      ) : (
+        <div></div>
+      )}
 
       <div className={styles1.piechart}>
         <Pie data={data} height="50px" width="50px" />
