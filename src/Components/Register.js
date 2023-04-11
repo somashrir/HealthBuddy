@@ -62,7 +62,7 @@ const Register = () => {
               <input
                 className={styles.inputtext}
                 placeholder="Enter your password"
-                type="text"
+                type="password"
                 name="password"
                 id="password"
                 value={password}
@@ -75,7 +75,7 @@ const Register = () => {
               <input
                 className={styles.inputtext}
                 placeholder="Enter your password"
-                type="text"
+                type="password"
                 name="cPassword"
                 required
               />

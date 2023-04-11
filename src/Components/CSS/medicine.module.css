@@ -31,7 +31,7 @@
     font-weight: 600;
 }
 .button:active{
-    background: #40916C;
+    background: #6d6a6c;
     border: none;
     color: #1B4332;
     font-weight: 600;
@@ -61,6 +61,12 @@
     color: #1B4332;
     font-weight: 600;
 }
+/* .button:active {
+    background: #574091;
+    border: none;
+    color: #1b2c43;
+    font-weight: 600;
+} */
 .file{
         margin-left: 1em;
         color: #1B4332;

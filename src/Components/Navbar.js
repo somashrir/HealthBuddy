@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 import logo from "../Assets/download.jpeg";
 
  const Navbar = () => {
-
+  const handleLogout = () =>{
+    
+    localStorage.removeItem('token');
+  }
   return (
     <>
       <div className={styles.nav}>
@@ -32,13 +35,13 @@ import logo from "../Assets/download.jpeg";
                     MedicineTracker
                   </Link>
                 </li>
-                {/* <li>
-                  <Link to="/profile" className={styles.navLink}>
+                <li>
+                  <Link to="/profiledetail" className={styles.navLink}>
                     Profile
                   </Link>
-                </li> */}
+                </li>
                 <li>
-                  <Link to="/Login" className={styles.navLink}>
+                  <Link to="/Login" onClick={handleLogout} className={styles.navLink}>
                     Logout
                   </Link>
                 </li>

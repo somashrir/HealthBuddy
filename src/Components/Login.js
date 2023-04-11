@@ -15,8 +15,7 @@ const Login = () => {
         .post('/api/v1/login', { email: email, password: password })
         .then((response) => {
           localStorage.setItem('token', response.data.token);
-          localStorage.setItem('username',response.data.username);
-          localStorage.setItem('email', response.data.email);
+          
           localStorage.setItem('calorie_intake', response.data.calorie_intake);
 
           if (response.data.calorie_intake==null)

@@ -28,6 +28,7 @@ export function FoodSearch({
   const [carbs, setCarbs] = useState(0);
   const [protein, setProtein] = useState(0);
   const [sugar, setSugar] = useState(0);
+  const [foodName, setFoodName] = useState('');
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
@@ -36,9 +37,11 @@ export function FoodSearch({
         setCalorie(response.data.calorie);
         setFat(response.data.fat);
         setSodium(response.data.sodium);
-        setCarbs(response.data.carbs);
+        setCarbs(response.data.carb);
         setProtein(response.data.protein);
         setSugar(response.data.sugar);
+        setFoodName(response.data.name);
+        
         // redirect to home page or dashboard
       })
       .catch((error) => console.log(error));
@@ -72,24 +75,34 @@ export function FoodSearch({
   return (
     <>
       <Navbar />
-      <div className={styles1.medicine}>
-        Search Food:{" "}
-        <input
-          type="text"
-          className={styles1.search}
-          placeholder="Search here"
-        />
-        <input type="file" multiple accept="image/*" />
-      </div>
-      <div className={styles1.chart}>
-        <div className={styles1.details}>
-          <div className={styles1.FoodName}>Your food details for FoodName</div>
-          <div className={styles1.data}>calories: 192 </div>
-          <div className={styles1.data}>calories: 192 </div>
-          <div className={styles1.data}>calories: 192 </div>
-          <div className={styles1.data}>calories: 192 </div>
+      <form onSubmit={handleSubmit}>
+        <div className={styles1.medicine}>
+          Search Food:{' '}
+          <input
+            type="text"
+            className={styles1.search}
+            placeholder="Search here"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <input type="file" multiple accept="image/*" />
         </div>
-      </div>
+      </form>
+      {console.log(calorie)}
+    {calorie!=0?
+      (<div className={styles1.chart}>
+        <div className={styles1.details}>
+          <div className={styles1.FoodName}>
+            Your food details for {foodName}
+          </div>
+          <div className={styles1.data}>calories: {calorie} </div>
+          <div className={styles1.data}>Fat: {fat} </div>
+          <div className={styles1.data}>Sugar: {sugar} </div>
+          <div className={styles1.data}>Protein: {protein} </div>
+          <div className={styles1.data}>Sodium: {sodium} </div>
+          <div className={styles1.data}>Carbs: {carbs} </div>
+        </div>
+      </div>):(<div></div>)}
 
       <div className={styles1.piechart}>
         <Pie data={data} height="50px" width="50px" />

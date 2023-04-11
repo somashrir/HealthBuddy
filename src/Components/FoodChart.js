@@ -20,6 +20,7 @@ export const FoodChart = () => {
       const now = new Date();
       const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
       const [selectedDate, setSelectedDate] = useState(today);
+      console.log(selectedDate)
 
 
       useEffect(() => {
@@ -33,13 +34,16 @@ export const FoodChart = () => {
         // Set the user_id in state
         setUser_id(user_id);
         setReqIntake(calorie_intake);
+        console.log("--------------------------")
+        console.log(selectedDate)
 
+        let d = (selectedDate == today)?'current_date':selectedDate;
         axios
           .post(
             'api/v1/index',
             {
               user_id: user_id,
-              selectedDate: selectedDate,
+              selectedDate: d,
             },
             {
               headers: {
@@ -52,6 +56,7 @@ export const FoodChart = () => {
             setLunch(response.data.lunch);
             setDinner(response.data.dinner);
             setTotalIntake(response.data.total_intake);
+
             // setRemainingIntake(response.data.remaining_intake);
           })
           .catch((error) => {
