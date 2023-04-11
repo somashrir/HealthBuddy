@@ -7,6 +7,9 @@
     background-position: right; 
     background-repeat: no-repeat;
 }
+.table{
+    margin:auto;
+}
 .medicine{
     margin-top: 2em;
     font-size: 17px;

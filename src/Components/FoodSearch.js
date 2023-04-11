@@ -65,12 +65,12 @@ export function FoodSearch({
           color3 || "#ff006e",
           color4 || "#3a86ff",
           color5 || "#8338ec",
+          color6 || "#3a0ca3",
         ],
-
-        borderWidth: 1,
+    borderWidth: 1,
       },
-    ],
-  };
+     ],
+    };
 
   return (
     <>
@@ -92,15 +92,46 @@ export function FoodSearch({
     {calorie!=0?
       (<div className={styles1.chart}>
         <div className={styles1.details}>
-          <div className={styles1.FoodName}>
-            Your food details for {foodName}
-          </div>
-          <div className={styles1.data}>calories: {calorie} </div>
-          <div className={styles1.data}>Fat: {fat} </div>
-          <div className={styles1.data}>Sugar: {sugar} </div>
-          <div className={styles1.data}>Protein: {protein} </div>
-          <div className={styles1.data}>Sodium: {sodium} </div>
-          <div className={styles1.data}>Carbs: {carbs} </div>
+          <div className={styles1.FoodName}>Your food details for FoodName</div>
+          <table className={styles1.table}>
+            <tbody>
+              <tr>
+                <td>calories</td>
+                <td>:</td>
+                <td>112</td>
+              </tr>
+              <tr>
+                <td>calories</td>
+                <td>:</td>
+                <td>112</td>
+              </tr>
+              <tr>
+                <td>calories</td>
+                <td>:</td>
+                <td>112</td>
+              </tr>
+              <tr>
+                <td>calories</td>
+                <td>:</td>
+                <td>112</td>
+              </tr>
+              <tr>
+                <td>calories</td>
+                <td>:</td>
+                <td>112</td>
+              </tr>
+              <tr>
+                <td>calories</td>
+                <td>:</td>
+                <td>112</td>
+              </tr>
+              <tr>
+                <td>calories</td>
+                <td>:</td>
+                <td>112</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>):(<div></div>)}
 

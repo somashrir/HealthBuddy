@@ -13,9 +13,9 @@ function Calorie() {
   const [quantity, setQuantity] = useState('');
   const [quantityType, setQuantityType] = useState('unit');
   const [calories, setCalories] = useState([]);
-  const location = useLocation();
-  const { type } = location.state;
-  const { date } = location.state;
+  // const location = useLocation();
+  // const { type } = location.state;
+  // const { date } = location.state;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -40,10 +40,10 @@ function Calorie() {
         {
           query: query,
           user_id: user_id,
-          food_type: type,
-          date: date,
-          quantity: quantity,
-          quantityType: quantityType,
+          // food_type: type,
+          // date: date,
+          // quantity: quantity,
+          // quantityType: quantityType,
         },
         {
           headers: {
@@ -60,10 +60,12 @@ function Calorie() {
   };
 
   return (
-    <div className={styles.mainCal}>
-      <div className={styles.containerCal}>
-        <div className={styles.headingCal}>
-          <h1 className={styles.headCal}>What did you eat today?</h1>
+    <>
+      <Navbar />
+      <div className={styles.mainCal}>
+        <div className={styles.containerCal}>
+          <div className={styles.headingCal}>
+            <h1 className={styles.headCal}>What did you eat today?</h1>
 
             <img className={styles.img} src={calorie} />
           </div>
@@ -94,13 +96,13 @@ function Calorie() {
                 <option value="gram">Gram</option>
               </select>
             </div>
-            <button className={styles.button} onClick={handleClick}>
-              <span className={styles.search}>Add Food</span>
+            <button className={styles.search} onClick={handleClick}>
+              Add Food
             </button>
           </div>
         </div>
       </div>
- 
+    </>
   );
 }
 
