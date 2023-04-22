@@ -1,4 +1,6 @@
 
 node_modules
+backend\tmp\cache\bootsnap\compile-cache-iseq
+
 
 
