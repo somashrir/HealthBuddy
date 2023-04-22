@@ -62,4 +62,36 @@ class ApplicationController < ActionController::API
         end
 
     end
+
+    def imageSearch(fileName) 
+        require "net/https"
+        require "uri"
+        puts "--------------------"
+        puts fileName
+        puts "---------------------"
+        puts "************************"
+
+        uri = URI.parse("https://api.logmeal.es/v2/recognition/dish")
+        form = [["image", File.open("C://Users//asus//Desktop//Project//New folder//majorProject//backend//public//uploads//#{fileName}")]]
+
+        req = Net::HTTP::Post.new(uri)
+        req["Authorization"] = "Bearer 85094a1e5159053693f063543eb3c1e30b690c15"
+        req.set_form form, "multipart/form-data"
+
+        res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+            http.request(req)
+        end
+        if res.code == '200'
+        
+            data = JSON.parse(res.body)
+            # food_d["model_versions"]["recognition_results"][0]["name"]
+        end
+
+        puts res.body
+        puts data
+        query = data["recognition_results"][0]["name"]
+        data = food_cal(query)
+        return data
+
+    end
 end

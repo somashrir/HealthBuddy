@@ -12,8 +12,10 @@ Rails.application.routes.draw do
     post 'medShow', to: "medicines#index"
     post 'medDestroy', to: "medicines#medDestroy"
     post 'profileShow', to: "users#show"
+    get "image", to: "users#foodie"
     end
   end
+  
   
   
 

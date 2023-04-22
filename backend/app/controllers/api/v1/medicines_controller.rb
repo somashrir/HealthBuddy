@@ -11,7 +11,7 @@ class Api::V1::MedicinesController < ApplicationController
         evening_med = meds.where("selectedTimings like ?","%evening%")
         night_med = meds.where("selectedTimings like ?","%night%")
 
-        render json: {morning_med:morning_med, afternoon_med:afternoon_med, evening_med:evening_med, night_med:night_med} 
+        render json: {morning_med:morning_med, afternoon_med:afternoon_med, evening_med:evening_med, night_med:night_med}
     end
 
     def check

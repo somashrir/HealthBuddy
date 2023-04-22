@@ -4,6 +4,10 @@ import { Pie } from 'react-chartjs-2';
 import Navbar from './Navbar';
 import axios from 'axios';
 import styles1 from './CSS/medicine.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
+
+
 
 ChartJS.register(ArcElement, Tooltip);
 
@@ -29,10 +33,36 @@ export function FoodSearch({
   const [protein, setProtein] = useState(0);
   const [sugar, setSugar] = useState(0);
   const [foodName, setFoodName] = useState('');
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const handleListen = () => {
+    console.log("listen---------------")
+    const recognition = new window.webkitSpeechRecognition();
+    console.log("initialize") // initialize speech recognition object
+    recognition.lang = 'en-GB';
+    recognition.onresult = (event) => {
+      console.log("hiiiiiiiiiiii")
+      console.log(event.results)
+      console.log(event.results[0][0])
+      console.log(event.results[0][0].transcript);
+      const  text = event.results[0][0].transcript;
+      setQuery(text);
+      console.log(text);
+      console.log(query) // set transcript state with recognized text
+    };
+    recognition.start(); // start speech recognition
+  };
+ 
+  
   const handleSubmit = (event) => {
+    
     event.preventDefault();
+     const formData = new FormData();
+     console.log(selectedFile)
+    formData.append('file', selectedFile);
+    formData.append('query', query);
     axios
-      .post('/api/v1/foodSearch', { query: query })
+      .post('/api/v1/foodSearch', formData)
       .then((response) => {
         setCalorie(response.data.calorie);
         setFat(response.data.fat);
@@ -43,6 +73,8 @@ export function FoodSearch({
         setFoodName(response.data.name);
         
         // redirect to home page or dashboard
+        setSelectedFile(null);
+        setQuery('')
       })
       .catch((error) => console.log(error));
   };
@@ -81,11 +113,23 @@ export function FoodSearch({
           <input
             type="text"
             className={styles1.search}
-            placeholder="Search here"
+            placeholder={query}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
-          <input type="file" multiple accept="image/*" />
+          <button type="button" onClick={handleListen}>
+            <i class="fa fa-microphone" aria-hidden="true"></i>
+          </button>
+          <input
+            type="file"
+            name="file"
+            // value={selectedFile}
+            onChange={(e) => setSelectedFile(e.target.files[0])}
+          />
+          {/* <button type="button" onClick={handleListen}>
+            <i class="fa fa-microphone" aria-hidden="true"></i>
+          </button> */}
+          <input type="submit" name="submit" value="Add" />
         </div>
       </form>
       {console.log(calorie)}
@@ -127,7 +171,6 @@ export function FoodSearch({
                   <td>:</td>
                   <td>{sodium}</td>
                 </tr>
-               
               </tbody>
             </table>
           </div>

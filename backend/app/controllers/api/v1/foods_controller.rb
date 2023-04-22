@@ -3,7 +3,7 @@ class Api::V1::FoodsController < ApplicationController
         require 'date'
         user = User.find(params[:user_id])
         data = food_cal(params[:query])
-        quantity = params[:quantity].to_f() 
+        quantity = params[:quantity].to_f()
         quantity_type = params[:quantityType]
         
         date = params[:date].to_datetime()
@@ -59,5 +59,28 @@ class Api::V1::FoodsController < ApplicationController
         end
 
     end
+
+    # def imageFood 
+    #     require 'net/http'
+
+    #     # Parameters
+    #     img = 'pizza_test.jpg'
+    #     api_user_token = '1ba413cb73d54ee94141c2ed4e5af1aa53f69783'
+    #     headers = {'Authorization' => "Bearer #{api_user_token}"}
+
+    #     # Single/Several Dishes Detection
+    #     api_url = 'https://api.logmeal.es/v2'
+    #     endpoint = '/image/recognition/complete'
+    #     uri = URI.parse("#{api_url}#{endpoint}")
+    #     File.open(img) do |file|
+    #         req = Net::HTTP::Post.new(uri, headers)
+    #         req.body = { image: file }.to_json
+    #         req.content_type = 'application/json'
+    #         res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+    #         http.request(req)
+    #         end
+    #     puts JSON.parse(res.body) # display dishes only
+    #     end
+    # end
 
 end
