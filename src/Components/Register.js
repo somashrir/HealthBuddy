@@ -10,6 +10,11 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState('');
+  
+  const handleDismiss = () => {
+    setErrorMessage('');
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -20,11 +25,24 @@ const Register = () => {
         navigate('/Login');
         // redirect to home page or dashboard
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        setErrorMessage(error.response.data.error[0]);
+        console.log(error)});
   };
   return (
     <>
       <LoginNavbar />
+      {errorMessage && (
+        <div
+          className="alert alert-warning alert-dismissible fade show"
+          role="alert"
+        >
+          <strong>Error:</strong> {errorMessage}
+          <button type="button" className="close" onClick={handleDismiss}>
+            &times;
+          </button>
+        </div>
+      )}
       <div className={styles.containerR}>
         <h1 className={styles.headerR}> Register your account</h1>
         <div className="form">

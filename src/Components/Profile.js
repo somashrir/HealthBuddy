@@ -81,16 +81,19 @@ const Profile = () => {
                 />
               </div>
               <div className={styles.inputcontainer}>
-                <div className={styles.label}>Gender </div>
-                <input
+                <div className={styles.label}>Gender</div>
+                <select
                   className={styles.inputtext}
-                  placeholder="Enter your gender"
-                  type="text"
                   name="gender"
                   value={gender}
                   onChange={(e) => setGender(e.target.value)}
                   required
-                />
+                >
+                  <option value="">Select gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
               </div>
               <div className={styles.inputcontainer}>
                 <div className={styles.label}>Height</div>

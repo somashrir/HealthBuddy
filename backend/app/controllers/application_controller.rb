@@ -75,7 +75,7 @@ class ApplicationController < ActionController::API
         form = [["image", File.open("C://Users//asus//Desktop//Project//New folder//majorProject//backend//public//uploads//#{fileName}")]]
 
         req = Net::HTTP::Post.new(uri)
-        req["Authorization"] = "Bearer 85094a1e5159053693f063543eb3c1e30b690c15"
+        req["Authorization"] = "Bearer de8da597828e78b4dd8dad165a3627358d712cfb"
         req.set_form form, "multipart/form-data"
 
         res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|

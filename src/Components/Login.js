@@ -7,7 +7,11 @@ import Home  from "./Home";
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
+      const handleDismiss = () => {
+        setErrorMessage('');
+      };
 
     const handleSubmit = (event) => {
       event.preventDefault();
@@ -28,11 +32,26 @@ const Login = () => {
           }
           // redirect to home page or dashboard
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          setErrorMessage(error.response.data.error);
+          console.log(error.response.data.error)});
+        
     };
   return (
     <>
       <LoginNavbar />
+      {errorMessage && (
+        <div
+          className="alert alert-warning alert-dismissible fade show"
+          role="alert"
+        >
+          <strong>Error:</strong> {errorMessage}
+          <button type="button" className="close" onClick={handleDismiss}>
+            &times;
+          </button>
+        </div>
+      )}
+
       <div className={`${styles.container} `}>
         <h1 className={`${styles.header}`}> Login</h1>
         <div className="form">

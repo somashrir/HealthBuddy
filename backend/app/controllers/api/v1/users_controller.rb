@@ -34,11 +34,11 @@ class Api::V1::UsersController < ApplicationController
         weight = params[:weight].to_f() 
         activity_level = params[:activity_level] 
         goal_weight = params[:goal_weight].to_f() 
-        diff_weight = goal_weight.to_f()-weight.to_f()
+        diff_weight = (goal_weight.to_f()-weight.to_f())>0?1:-1
         puts activity_level
 
         cal_data = cal_track(age=age, gender= gender, height= height, weight= weight, activity_level= activity_level)
-
+        puts cal_data
         cal_intake =  cal_data["data"]["goals"]["maintain weight"]+ (1000*diff_weight)
         if user.update!(age:age,gender:gender,height:height, weight:weight, goal_weight:goal_weight, activity_level:activity_level,calorie_intake: cal_intake)
 
