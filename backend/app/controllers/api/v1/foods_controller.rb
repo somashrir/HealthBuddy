@@ -13,12 +13,12 @@ class Api::V1::FoodsController < ApplicationController
         puts params[:date]
         value = (quantity_type == 'ml' || quantity_type == 'gram')? (quantity/100): quantity
         
-        calorie = data[0]["calories"]*value
-        carb = data[0]["carbohydrates_total_g"]*value
-        fat = data[0]["fat_total_g"]*value
-        protein  = data[0]["protein_g"]*value
-        sodium = data[0]["sodium_mg"]*value
-        sugar = data[0]["sugar_g"]*value
+        calorie = sprintf("%.2f", data[0]["calories"] * value)
+        carb = sprintf("%.2f", data[0]["carbohydrates_total_g"] * value)
+        fat = sprintf("%.2f", data[0]["fat_total_g"] * value)
+        protein = sprintf("%.2f", data[0]["protein_g"] * value)
+        sodium = sprintf("%.2f", data[0]["sodium_mg"] * value)
+        sugar = sprintf("%.2f", data[0]["sugar_g"] * value)
         food_type = params[:food_type]
         user.foods.create(name:data[0]["name"],calorie: calorie,carb:carb, fat:fat, protein:protein, sodium:sodium, suger:sugar, food_type:food_type, created_at:date, updated_at:date, quantity:quantity,quantity_type:quantity_type)
 
